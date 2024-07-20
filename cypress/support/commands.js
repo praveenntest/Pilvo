@@ -25,6 +25,7 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 import { getCoordinates, getWeatherData, saveCityStats } from '../utils/weather';
+import { createChannel, joinChannel,renameChannel,listChannels, archiveChannel} from '../utils/slack';
 
 Cypress.Commands.add('fetchWeatherData', (cities, filename) => {
   const stats = [];
@@ -50,3 +51,23 @@ Cypress.Commands.add('findTopNCities', (stats, n, metric) => {
     }
   }).slice(0, n);
 });
+  
+  Cypress.Commands.add('createChannel', (name) => {
+    return createChannel(name);
+  });
+  
+  Cypress.Commands.add('joinChannel', (channelId) => {
+    return joinChannel(channelId);
+  });
+  
+  Cypress.Commands.add('renameChannel', (channelId, newName) => {
+    return renameChannel(channelId, newName);
+  });
+  
+  Cypress.Commands.add('listChannels', () => {
+    return listChannels();
+  });
+  
+  Cypress.Commands.add('archiveChannel', (channelId) => {
+    return archiveChannel(channelId);
+  });

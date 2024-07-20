@@ -21,4 +21,4 @@ describe('Weather Automation', () => {
       cy.log('Top N Most Humid Cities:', mostHumidCities);
     });
   });
-});
+}); 
