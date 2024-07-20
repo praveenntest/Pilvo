@@ -1,4 +1,4 @@
-const token = 'your_slack_api_token';
+const token = '885e635bc9e9519645n55n4n4n13d3c0d19d8';
 const baseUrl = 'https://slack.com/api';
 
 function createChannel(name) {
